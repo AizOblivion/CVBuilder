@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BikinCV Online | Buat CV Profesional Lebih Mudah</title>
+    <meta
+      name="description"
+      content="Website layanan pembuatan CV online untuk membantu pengguna membuat CV profesional dengan cepat."
+    />
+    <meta
+      name="keywords"
+      content="buat cv online, template cv, cv ats friendly, jasa pembuatan cv, cv profesional"
+    />
+    <meta name="author" content="BikinCV Online" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="BikinCV Online | Buat CV Profesional Lebih Mudah" />
+    <meta
+      property="og:description"
+      content="Buat CV online yang rapi, modern, dan siap kirim kerja dengan template profesional."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:image" content="assets/images/cv-preview.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BikinCV Online | Buat CV Profesional Lebih Mudah" />
+    <meta
+      name="twitter:description"
+      content="Template CV profesional, proses cepat, dan siap export PDF untuk melamar kerja."
+    />
+    <meta name="twitter:image" content="assets/images/cv-preview.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#home">BikinCV Online</a>
+        <nav class="site-nav" aria-label="Navigasi utama">
+          <a href="#builder">Buat CV</a>
+          <a href="#about">Keunggulan</a>
+          <a href="#features">Fitur</a>
+          <a href="#steps">Cara Kerja</a>
+          <a href="#portfolio">Template</a>
+        </nav>
+      </header>
+
+      <main id="home">
+        <section class="hero section">
+          <div class="hero-copy">
+            <p class="eyebrow">Layanan Pembuatan CV Online</p>
+            <h1>Buat CV profesional online yang lebih rapi, modern, dan siap kirim kerja.</h1>
+            <p class="lead">
+              Pengguna bisa langsung isi banyak pengalaman kerja, pendidikan, skill,
+              dan bahasa, lalu lihat preview CV satu lembar sebelum download PDF.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#builder">Mulai Buat CV</a>
+              <a class="button button-secondary" href="#portfolio">Lihat Template</a>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <p class="hero-card-label">Preview CV</p>
+            <img
+              class="hero-preview"
+              src="assets/images/cv-preview.svg"
+              alt="Preview template CV online"
+            />
+            <div class="hero-stats">
+              <span>Multi-entry</span>
+              <span>Export PDF</span>
+              <span>Autosave</span>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section builder-section" id="builder">
+          <div class="section-heading builder-heading">
+            <p class="section-tag">CV Builder</p>
+            <h2>Tambah sebanyak yang dibutuhkan, preview langsung berubah, lalu download CV kamu.</h2>
+            <p class="lead">
+              Semua berjalan langsung di browser, jadi website ini bisa di-host
+              sebagai static site tanpa backend dengan format CV satu lembar A4.
+            </p>
+          </div>
+
+          <div class="builder-layout">
+            <form class="builder-form content-card" id="cv-form">
+              <div class="builder-panel-head">
+                <div>
+                  <h3>Data CV</h3>
+                  <p>Lengkapi profil utama lalu tambah pengalaman, pendidikan, skill, dan bahasa.</p>
+                </div>
+                <span class="save-badge" id="save-badge">Autosave aktif</span>
+              </div>
+
+              <div class="form-section">
+                <h4>Profil Utama</h4>
+                <div class="form-grid">
+                  <label>
+                    Nama Lengkap
+                    <input type="text" name="fullName" />
+                  </label>
+                  <label>
+                    Posisi / Role
+                    <input type="text" name="jobTitle" />
+                  </label>
+                  <label>
+                    Email
+                    <input type="email" name="email" />
+                  </label>
+                  <label>
+                    <span class="label-text">Telepon <span class="field-optional">(opsional)</span></span>
+                    <input type="text" name="phone" />
+                  </label>
+                  <label>
+                    <span class="label-text">Kota <span class="field-optional">(opsional)</span></span>
+                    <input type="text" name="city" />
+                  </label>
+                  <label>
+                    <span class="label-text">Website / LinkedIn <span class="field-optional">(opsional)</span></span>
+                    <input type="text" name="website" />
+                  </label>
+                </div>
+                <div class="form-grid">
+                  <label>
+                    <span class="label-text">Tanggal Lahir <span class="field-optional">(opsional)</span></span>
+                    <input type="text" name="birthDate" />
+                  </label>
+                  <label>
+                    <span class="label-text">Status Pernikahan <span class="field-optional">(opsional)</span></span>
+                    <input type="text" name="maritalStatus" />
+                  </label>
+                  <label>
+                    <span class="label-text">Agama <span class="field-optional">(opsional)</span></span>
+                    <input type="text" name="religion" />
+                  </label>
+                  <label>
+                    <span class="label-text">Jenis Kelamin <span class="field-optional">(opsional)</span></span>
+                    <input type="text" name="gender" />
+                  </label>
+                  <label>
+                    <span class="label-text">NIK / KTP <span class="field-optional">(opsional)</span></span>
+                    <input type="text" name="identityNumber" />
+                  </label>
+                </div>
+                <label>
+                  <span class="label-text">Alamat Lengkap Rumah <span class="field-optional">(opsional)</span></span>
+                  <textarea name="fullAddress" rows="3"></textarea>
+                </label>
+                <div class="photo-upload-row">
+                  <label class="photo-upload-field">
+                    Foto Profil
+                    <input type="file" id="photo-upload" accept="image/png,image/jpeg,image/webp" />
+                    <span class="upload-help">PNG, JPG, atau WEBP. Diproses lokal di browser.</span>
+                  </label>
+                  <button type="button" class="ghost-button" id="remove-photo">Hapus Foto</button>
+                </div>
+                <label>
+                  Ringkasan Profil
+                  <textarea name="summary" rows="5"></textarea>
+                </label>
+              </div>
+
+              <div class="form-section">
+                <div class="section-row">
+                  <h4>Pengalaman Kerja</h4>
+                  <button type="button" class="mini-button" data-add="experience">+ Tambah</button>
+                </div>
+                <div class="repeatable-stack" id="experience-list"></div>
+              </div>
+
+              <div class="form-section">
+                <div class="section-row">
+                  <h4>Pendidikan</h4>
+                  <button type="button" class="mini-button" data-add="education">+ Tambah</button>
+                </div>
+                <div class="repeatable-stack" id="education-list"></div>
+              </div>
+
+              <div class="form-section">
+                <div class="section-row">
+                  <h4>Skill</h4>
+                  <button type="button" class="mini-button" data-add="skill">+ Tambah</button>
+                </div>
+                <div class="repeatable-stack compact-stack" id="skill-list"></div>
+              </div>
+
+              <div class="form-section">
+                <div class="section-row">
+                  <h4>Bahasa</h4>
+                  <button type="button" class="mini-button" data-add="language">+ Tambah</button>
+                </div>
+                <div class="repeatable-stack" id="language-list"></div>
+              </div>
+
+              <div class="form-section" id="custom-sections-wrap">
+                <div class="section-row">
+                  <h4>Section Tambahan</h4>
+                  <button type="button" class="mini-button" id="add-custom-section">+ Tambah Section</button>
+                </div>
+                <p class="repeatable-meta" style="margin-top:6px">Buat section bebas seperti Organisasi, Prestasi, Sertifikasi, dll.</p>
+                <div id="custom-sections-list"></div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="button button-primary" id="download-cv">
+                  Download PDF
+                </button>
+                <button type="reset" class="button button-secondary" id="reset-cv">
+                  Reset
+                </button>
+              </div>
+            </form>
+
+            <div class="builder-preview-wrap">
+              <div class="preview-toolbar content-card">
+                <div>
+                  <h3>Preview Live</h3>
+                  <p>Hasil CV tampil sebagai satu lembar A4 dan bisa ditinjau sebelum diunduh.</p>
+                </div>
+                <span class="preview-note">Preview single-page A4</span>
+              </div>
+
+              <div class="preview-scroll content-card">
+                <div class="preview-scale">
+                  <div class="cv-pages template-minimal" id="cv-preview-pages"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section about-grid" id="about">
+          <div>
+            <p class="section-tag">Keunggulan</p>
+            <h2>CV yang baik membantu kamu tampil lebih siap sejak kesan pertama.</h2>
+          </div>
+          <div class="content-card">
+            <p>
+              Banyak pelamar punya pengalaman yang bagus, tapi CV-nya belum tersusun
+              dengan rapi. Website ini membantu pengguna membuat CV online yang lebih
+              jelas, profesional, dan enak dibaca.
+            </p>
+            <p>
+              Fokusnya bukan hanya desain, tetapi juga struktur konten yang mendukung
+              peluang dilirik recruiter lebih cepat.
+            </p>
+          </div>
+        </section>
+
+        <section class="section metrics">
+          <article class="metric-card">
+            <strong>Multi</strong>
+            <span>Pengalaman dan pendidikan bisa lebih dari satu</span>
+          </article>
+          <article class="metric-card">
+            <strong>Live</strong>
+            <span>Preview real-time</span>
+          </article>
+          <article class="metric-card">
+            <strong>PDF</strong>
+            <span>Download langsung dari browser</span>
+          </article>
+        </section>
+
+        <section class="section" id="features">
+          <div class="section-heading">
+            <p class="section-tag">Fitur</p>
+            <h2>Semua yang dibutuhkan untuk membuat CV online ada di satu tempat.</h2>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <span class="timeline-period">01</span>
+              <div>
+                <h3>Template Profesional</h3>
+                <p>Desain CV modern, rapi, dan mudah dipindai.</p>
+                <ul>
+                  <li>Pilihan template untuk kebutuhan formal, modern, dan executive.</li>
+                  <li>Susunan section dibuat lebih jelas dan terstruktur.</li>
+                  <li>Tampilan cocok untuk screening awal recruiter.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-period">02</span>
+              <div>
+                <h3>Builder Fleksibel</h3>
+                <p>Pengguna bisa menambah pengalaman kerja, pendidikan, skill, dan bahasa.</p>
+                <ul>
+                  <li>Isi data langsung dari browser.</li>
+                  <li>Preview berubah secara live saat mengetik.</li>
+                  <li>Data tersimpan sementara di browser dengan autosave.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-period">03</span>
+              <div>
+                <h3>Download Siap Kirim</h3>
+                <p>Hasil akhir bisa langsung dicetak atau disimpan menjadi PDF.</p>
+                <ul>
+                  <li>Cocok untuk lamaran kerja cepat.</li>
+                  <li>Tidak butuh backend untuk versi awal.</li>
+                  <li>Siap di-host sebagai static website.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="steps">
+          <div class="section-heading">
+            <p class="section-tag">Cara Kerja</p>
+            <h2>Alurnya singkat agar pengguna cepat sampai ke hasil akhir.</h2>
+          </div>
+
+          <div class="skills-grid">
+            <article class="content-card">
+              <h3>1. Isi Profil</h3>
+              <p>Masukkan identitas utama, ringkasan, dan kontak profesional.</p>
+            </article>
+            <article class="content-card">
+              <h3>2. Tambah Item</h3>
+              <p>Tambahkan pengalaman, pendidikan, skill, dan bahasa sesuai kebutuhan.</p>
+            </article>
+            <article class="content-card">
+              <h3>3. Download PDF</h3>
+              <p>Preview hasil akhir, lalu simpan ke PDF dari browser untuk langsung dikirim.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="portfolio">
+          <div class="section-heading">
+            <p class="section-tag">Template CV</p>
+            <h2>Pilih template yang sesuai dengan gaya profesi dan level pengalaman.</h2>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <p class="project-type">Template Minimal</p>
+              <h3>Bersih dan formal</h3>
+              <p>Cocok untuk pelamar kerja korporat yang ingin tampilan aman dan profesional.</p>
+            </article>
+            <article class="project-card">
+              <p class="project-type">Template Modern</p>
+              <h3>Lebih segar dan standout</h3>
+              <p>Cocok untuk profesional digital, kreatif, dan pelamar yang ingin visual lebih kuat.</p>
+            </article>
+            <article class="project-card">
+              <p class="project-type">Template Executive</p>
+              <h3>Tegas dan premium</h3>
+              <p>Cocok untuk profesional berpengalaman yang ingin kesan matang dan terstruktur.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; 2026 BikinCV Online. Website layanan pembuatan CV online.</p>
+      </footer>
+    </div>
+
+    <div class="modal-overlay" id="template-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal-box">
+
+        <!-- Panel kiri: pilih template -->
+        <div class="modal-sidebar">
+          <div class="modal-sidebar-head">
+            <h2 id="modal-title">Pilih Template</h2>
+            <p>Klik template untuk preview detail.</p>
+          </div>
+          <div class="modal-template-list">
+            <label class="modal-tpl-item" data-template="minimal">
+              <input type="radio" name="modal-template" value="minimal" checked />
+              <div class="modal-tpl-thumb">
+                <div class="cv-pages template-minimal modal-cv-preview" id="modal-preview-minimal"></div>
+              </div>
+              <div class="modal-tpl-label">
+                <strong>Minimal</strong>
+                <span>Bersih &amp; formal</span>
+              </div>
+              <span class="modal-tpl-check">✓</span>
+            </label>
+            <label class="modal-tpl-item" data-template="modern">
+              <input type="radio" name="modal-template" value="modern" />
+              <div class="modal-tpl-thumb">
+                <div class="cv-pages template-modern modal-cv-preview" id="modal-preview-modern"></div>
+              </div>
+              <div class="modal-tpl-label">
+                <strong>Modern</strong>
+                <span>Segar &amp; standout</span>
+              </div>
+              <span class="modal-tpl-check">✓</span>
+            </label>
+            <label class="modal-tpl-item" data-template="executive">
+              <input type="radio" name="modal-template" value="executive" />
+              <div class="modal-tpl-thumb">
+                <div class="cv-pages template-executive modal-cv-preview" id="modal-preview-executive"></div>
+              </div>
+              <div class="modal-tpl-label">
+                <strong>Executive</strong>
+                <span>Tegas &amp; premium</span>
+              </div>
+              <span class="modal-tpl-check">✓</span>
+            </label>
+          </div>
+          <div class="modal-sidebar-actions">
+            <button class="button button-primary" id="modal-download">Download PDF</button>
+            <button class="button button-secondary" id="modal-cancel">Batal</button>
+          </div>
+        </div>
+
+        <!-- Panel kanan: preview detail -->
+        <div class="modal-detail">
+          <div class="modal-detail-head">
+            <span class="modal-detail-label" id="modal-detail-label">Preview — Minimal</span>
+            <button class="ghost-button modal-close" id="modal-close" aria-label="Tutup">✕</button>
+          </div>
+          <div class="modal-detail-scroll">
+            <div class="modal-detail-scale">
+              <div class="cv-pages" id="modal-detail-preview"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
